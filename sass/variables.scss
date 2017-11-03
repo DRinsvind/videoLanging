@@ -1,0 +1,28 @@
+//Colors
+
+$white:#FFFFFF;
+$black:#141414;
+$darkGray:#454545;
+$purple:#4f4dfc;
+$gray:#585858;
+$lightGray:#d8d8d8;
+$pink:#f44e8c;
+$peach:#ff7676;
+@mixin font($family-type, $size: 1rem, $weight : normal, $color : $DarkBlue){
+  font: {
+    family: $family-type;
+    size: $size;
+    weight: $weight;
+  }
+  color: $color;
+}
+@mixin bg1(){
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fe7677+0,f44e8c+100 */
+  background: #fe7677; /* Old browsers */
+  background: -moz-linear-gradient(left, #fe7677 0%, #f44e8c 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #fe7677 0%,#f44e8c 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #fe7677 0%,#f44e8c 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fe7677', endColorstr='#f44e8c',GradientType=1 ); /* IE6-9 */
+}
+
+$font: 'Roboto', sans-serif;

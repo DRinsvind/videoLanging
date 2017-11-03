@@ -1,0 +1,21 @@
+head{
+
+}
+.head-body{
+  display: flex;
+  padding: 100px 0px 50px!important;
+  &>div{
+    width:50%;
+  }
+}
+.head-content{
+  &__price-block{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__new-price{
+    @include font($font,49px,700,$purple);
+  }
+}

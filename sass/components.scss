@@ -1,0 +1,86 @@
+body{
+  width: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  position: relative;
+  //display: flex;
+  //flex-direction: column;
+  //min-height: 100vh;
+}
+*{
+  padding: 0px;
+  margin: 0px;
+  outline: none;
+}
+ul{
+  list-style: none;
+}
+section{
+  width:100%;
+}
+//main{
+//  flex: 1;
+//}
+.container{
+  width:100%;
+  max-width: 1230px;
+  margin: 0px auto;
+  box-sizing: border-box;
+  padding: 0px 30px;
+}
+.form-default{
+  margin: 0px auto 50px;
+  max-width: 360px;
+  width:100%;
+  padding: 40px;
+  box-sizing: border-box;
+  box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.3);
+}
+.form-title{
+  @include font($font,20px,500,$darkGray);
+  line-height: 30px;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.form-group{
+  width:100%;
+  position: relative;
+}
+.input-default{
+  padding: 20px 19px 18px;
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  border-radius: 3px;
+  border: 1px solid $lightGray;
+  width:100%;
+
+  @include font($font,16px,400,$darkGray);
+  &:focus+label{
+    opacity: 0;
+  }
+  &_not_empty+label{
+    opacity: 0;
+  }
+}
+.label-default{
+  top:20px;
+  left:19px;
+  transition-property: opacity;
+  transition-duration: 500ms;
+  opacity: 1;
+  position: absolute;
+  @include font($font,16px,400,$darkGray);
+  span{
+    color:$peach;
+  }
+}
+.button-default{
+  @include bg1();
+  text-transform: uppercase;
+  border-radius: 6px;
+  padding: 15px 0px;
+  display: block;
+  width:160px;
+  margin: 0px auto;
+  @include font($font,16px,700,$white);
+}

@@ -1,0 +1,209 @@
+#hamburger {
+  display: none;
+  @include breakpoint(max-width 1000px) {
+    display: block;
+  }
+  margin: 0px 20px 0px 0px;
+  width: 30px;
+  height: 22.5px;
+  position: relative;
+  -webkit-transform: rotate(0deg) scale(0.8);
+  -moz-transform: rotate(0deg) scale(0.8);
+  -o-transform: rotate(0deg) scale(0.8);
+  transform: rotate(0deg) scale(0.8);
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+  cursor: pointer;
+}
+
+#hamburger span {
+  display: block;
+  position: absolute;
+  height: 4px;
+  width: 100%;
+  background: $white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: .25s ease-in-out;
+  -moz-transition: .25s ease-in-out;
+  -o-transition: .25s ease-in-out;
+  transition: .25s ease-in-out;
+}
+
+
+#hamburger span:nth-child(1) {
+  top: 0px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#hamburger span:nth-child(2) {
+  top: 9px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+}
+
+#hamburger span:nth-child(3) {
+  top: 18px;
+  -webkit-transform-origin: left center;
+  -moz-transform-origin: left center;
+  -o-transform-origin: left center;
+  transform-origin: left center;
+
+}
+
+#hamburger.open span:nth-child(1) {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  top: -1.5px;
+  left: 4px;
+}
+
+#hamburger.open span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+
+#hamburger.open span:nth-child(3) {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  top: 19.5px;
+  left: 4px;
+}
+.header-block{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  position: relative;
+  @include breakpoint(max-width 1000px) {
+    justify-content: flex-start;
+    padding-top: 20px!important;
+    padding-bottom: 15px!important;
+
+
+  }
+}
+header{
+  @include bg1();
+
+}
+.header-logo{
+  @include font($font,25px,700,$white);
+  text-transform: uppercase;
+  @include breakpoint(min-width 1300px) {
+    width: 270px;
+  }
+  @include breakpoint(max-width 1100px) {
+    font-size: 21px;
+    @include breakpoint(max-width 600px) {
+      display: none;
+    }
+  }
+}
+.header-contact{
+  @include font($font,25px,700,$white);
+  @include breakpoint(min-width 1300px) {
+    width: 270px;
+  }
+  @include breakpoint(max-width 1100px) {
+    font-size: 21px;
+    @include breakpoint(max-width 1000px) {
+      margin-left: auto;
+    }
+  }
+}
+.header-button{
+  display: none;
+}
+.header-menu{
+  @include breakpoint(max-width 1000px) {
+    order: -1;
+
+  }
+  &__list-block{
+    display: flex;
+    @include breakpoint(max-width 1000px) {
+      box-sizing: border-box;
+      position: absolute;
+      background-color: white;
+      z-index: -5;
+      width:100%;
+      left:0px;
+      padding: 25px 20px 25px;
+      box-shadow: -10px 5px 5px 4px rgba(0,0,0,.5);
+      flex-direction: column;
+      text-transform: capitalize;
+      top:100%;
+      left:-100%;
+      transition-duration: left;
+      transition-duration: 500ms;
+      &.open{
+        left: 0px;
+      }
+
+    }
+  }
+  &__list-child{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    &.active:after{
+      visibility: visible;
+    }
+    &:after{
+      visibility: hidden;
+      content:'';
+      width:8px;
+      height:8px;
+      background-color: black;
+      position: relative;
+      margin: -8px auto 0px;
+      transform: translateY(4px) rotate(45deg);
+      background-color: $white;
+      z-index:200;
+      @include breakpoint(max-width 1000px) {
+        display: none;
+      }
+    }
+    @include breakpoint(max-width 1000px) {
+      &:not(:last-of-type) a{
+        border-bottom: 1px solid $gray;
+      }
+    }
+    a{
+      @include font($font,15px,700,$white);
+      text-decoration: none;
+      display: block;
+      padding: 25px 12.5px;
+      position: relative;
+      &:hover,&:active{
+        color:white;
+        text-decoration: none;
+      }
+      @include breakpoint(max-width 1000px) {
+        color:$black;
+        padding: 15px 15px;
+        &:hover{
+          color:$black;
+        }
+      }
+    }
+  }
+}
