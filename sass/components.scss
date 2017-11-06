@@ -27,33 +27,80 @@ section{
   margin: 0px auto;
   box-sizing: border-box;
   padding: 0px 30px;
+  @include breakpoint(max-width 1000px) {
+    padding: 0px 20px;
+  }
+  &_section_size{
+    max-width: 1086px;
+  }
 }
 .form-default{
   margin: 0px auto 50px;
-  max-width: 360px;
+  max-width: 380px;
+  min-width: 380px;
+  background-color: $white;
   width:100%;
   padding: 40px;
   box-sizing: border-box;
   box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.3);
+  @include breakpoint(780px 900px) {
+    padding: 10px;
+  }
+  @include breakpoint(max-width 500px) {
+    width:100%;
+    min-width: 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+  &_contacts_section{
+    @include breakpoint(940px){
+      max-width: 970px;
+      min-width: 100%;
+      margin: 0px auto;
+      padding: 20px 80px;
+      @include breakpoint(max-width 1100px) {
+        padding: 20px 70px;
+        @include breakpoint(max-width 1000px) {
+          padding: 20px 50px;
+        }
+      }
+    }
+
+  }
 }
 .form-title{
   @include font($font,20px,500,$darkGray);
   line-height: 30px;
   text-align: center;
   margin-bottom: 18px;
+  @include breakpoint(max-width 980px) {
+    font-size: 18px;
+    line-height: 27px;
+  }
 }
 .form-group{
   width:100%;
   position: relative;
+  @include breakpoint(max-width 500px) {
+    max-width: 280px;
+    marmargin: 0px;gin: 0px auto 0px;
+  }
 }
 .input-default{
-  padding: 20px 19px 18px;
+  padding: 14px 19px 13px;
   box-sizing: border-box;
   margin-bottom: 15px;
   border-radius: 3px;
   border: 1px solid $lightGray;
   width:100%;
-
+  @include breakpoint(780px 980px) {
+    margin-bottom: 10px;
+  }
+  @include breakpoint(max-width 500px) {
+    max-width: 280px;
+    box-sizing: border-box;
+    margin: 0px auto 10px;
+  }
   @include font($font,16px,400,$darkGray);
   &:focus+label{
     opacity: 0;
@@ -63,7 +110,7 @@ section{
   }
 }
 .label-default{
-  top:20px;
+  top:15px;
   left:19px;
   transition-property: opacity;
   transition-duration: 500ms;
@@ -81,6 +128,33 @@ section{
   padding: 15px 0px;
   display: block;
   width:160px;
+  cursor: pointer;
   margin: 0px auto;
   @include font($font,16px,700,$white);
+}
+.form-wrapper{
+  @include breakpoint(940px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    & > div {
+      max-width: 300px;
+      margin: 0px;
+    }
+    * {
+      margin: 0px;
+    }
+  }
+}
+#map{
+  width:100%;
+  height:280px;
+  @include breakpoint(max-width 500px) {
+    height:180px;
+  }
+
+}
+h2.section-title{
+  margin: 0px;
+  @include font($font,25px,700,$darkGray);
 }

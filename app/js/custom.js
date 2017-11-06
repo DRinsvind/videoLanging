@@ -15,7 +15,11 @@ $().ready(function() {
                     $(this).removeClass('input-default_not_empty')
                 }
             })
+        },
+        custom:function(){
+
         }
     }
     init.click();
+    init.custom();
 });

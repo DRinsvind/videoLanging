@@ -146,15 +146,16 @@ header{
       width:100%;
       left:0px;
       padding: 25px 20px 25px;
-      box-shadow: -10px 5px 5px 4px rgba(0,0,0,.5);
+     box-shadow: none;
       flex-direction: column;
       text-transform: capitalize;
       top:100%;
       left:-100%;
-      transition-duration: left;
-      transition-duration: 500ms;
+      transition-property: left,box-shadow;
+      transition-duration: 500ms,1000ms;
       &.open{
         left: 0px;
+        box-shadow: -10px 5px 5px 4px rgba(0,0,0,.5);
       }
 
     }
