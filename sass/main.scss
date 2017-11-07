@@ -1,5 +1,5 @@
 .head{
-  background-image: url(../img/bg_block2.png);
+
   background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,6 +12,9 @@
     @include breakpoint(max-width 780px) {
       padding: 100px 0px 50px;
       flex-direction: column;
+      @include breakpoint(max-width 600px) {
+        padding: 100px 0px 15px;
+      }
     }
   }
   &>div{
@@ -162,10 +165,29 @@
 }
 .reviews-list{
   padding: 30px 0px;
+  @include breakpoint(max-width 800px) {
+    padding: 20px 0px 30px;
+  }
+  .gutter-sizer { width: 4%; }
+  .swiper-wrapper{
+    align-items: center;
+  }
+  .swiper-slide{
+    .reviews-list__child-block{
+      margin: 0px auto 0px;
+      width:80%;
+      @include breakpoint(max-width 650px) {
+        width: 95%;
+      }
+    }
+  }
   &__child-block{
-    width:500px;
+    &.grid-item { width:48%; }
     box-sizing: border-box;
     padding:16px 21px 29px 15px;
+    &.small-padding{
+      padding:16px 21px 17px 15px;
+    }
     background-color: white;
     box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.3);
     @include border;
@@ -189,21 +211,42 @@
 .table-block{
   display: flex;
   margin-bottom: 30px;
+  @include breakpoint(max-width 880px) {
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
   &__list{
     width: 50%;
+    @include breakpoint(max-width 880px) {
+      width: 100%;
+      margin-bottom: 25px;
+    }
     &:first-of-type{
       .table-block__list-child{
-        border-right: 1px solid #d8d8d8;;
+        border-right: 1px solid #d8d8d8;
+        @include breakpoint(max-width 880px) {
+          border-right: none;
+        }
       }
     }
   }
   &__list-child{
+
     &:not(:last-of-type){
       border-bottom: 1px solid #d8d8d8;
     }
     @include font($font,14px,300,$black);
     line-height: 30px;
     padding: 10px;
+    &.title-li{
+      @include font($font,16px,500,$purple);
+    }
+
+    @include breakpoint(max-width 880px) {
+      br{
+        display: none;
+      }
+    }
   }
 }
 .about-youtube{
@@ -214,17 +257,47 @@
     max-width: 100%;
     display: block;
     margin: 0px auto;
+    @include breakpoint(max-width 700px) {
+      height: 300px!important;
+      @include breakpoint(max-width 550px) {
+        height: 230px!important;
+      }
+    }
   }
 }
 .resize-block{
   margin: 27px 0px 25px;
 
   position: relative;
+
   p{
-    max-height: 175px;
+    height: 175px;
+    max-height: 100%;
     overflow: hidden;
+    transition-property: max-height,height;
+    transition-duration: 500ms;
+  }
+  &.open{
+    p{
+      height:auto;
+      transition-property: max-height,height;
+      transition-duration: 500ms;
+    }
+    .resize-block__arrow{
+      transform: rotate(180deg);
+      transition-property: transform;
+      transition-duration: 500ms;
+    }
+    .resize-block__filter{
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: 500ms;
+    }
   }
   &__filter{
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 500ms;
     position: absolute;
     width:100%;
     height:100%;
@@ -244,26 +317,55 @@
     width:20px;
     margin: 0px auto;
     height:11px;
+    transform: rotate(360deg);
+    transition-property: transform;
+    transition-duration: 500ms;
     background-image: url(../img/ar.png);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     bottom: 11px;
+    cursor: pointer;
   }
 }
 .about{
-  background-color: $grayBg;
+  padding-top: 80px;
+  background: rgba(255,255,255,1);
+  background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 11%, rgba(244,244,244,1) 100%);
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(11%, rgba(244,244,244,1)), color-stop(100%, rgba(244,244,244,1)));
+  background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 11%, rgba(244,244,244,1) 100%);
+  background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 11%, rgba(244,244,244,1) 100%);
+  background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 11%, rgba(244,244,244,1) 100%);
+  background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(244,244,244,1) 11%, rgba(244,244,244,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#f4f4f4', GradientType=0 );
+}
+.advantage{
+  background-color: $white;
 }
 .advantage-list{
   padding: 25px 0px 0px;
   display: flex;
+  justify-content: center;
+  @include breakpoint(max-width 1100px) {
+    flex-wrap: wrap;
+  }
   &__child-block{
+    &.swiper-slide{
+      width: 220px!important;
+    }
 
-
-    margin: 0px 0px 65px 0px;
+    margin: 0px 12px 65px;
     position: relative;
     background-color: white;
     z-index: 15;
+    @include breakpoint(max-width 1100px) {
+      margin: 0px 30px 65px;
+      @include breakpoint(max-width 900px) {
+        margin: 0px 12px 65px;
+      }
+    }
+    width: 202px;
+    box-sizing: border-box;
     &:before{
       content:'';
       position: absolute;
@@ -285,11 +387,6 @@
       z-index: -10;
       @include border2();
     }
-    &:not(:last-of-type){
-      margin-right: 30px;
-    }
-    width: 202px;
-    box-sizing: border-box;
   }
   &__wrapper{
     background-color: white;
@@ -313,4 +410,22 @@
     line-height: 24px;
   }
 
+}
+.photo-slider{
+  padding: 40px 30px 0px;
+
+  .swiper-container{
+    max-width: 750px;
+    margin: 0px auto;
+    width:100%;
+    box-sizing: border-box;
+  }
+  .swiper-slide{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .swiper-button-next,.swiper-button-prev{
+    display: none;
+  }
 }

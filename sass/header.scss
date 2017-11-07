@@ -101,7 +101,9 @@
 }
 header{
   @include bg1();
-
+  width:100%;
+  position: fixed;
+  z-index: 500;
 }
 .header-logo{
   @include font($font,25px,700,$white);

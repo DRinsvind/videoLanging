@@ -83,7 +83,7 @@ section{
   position: relative;
   @include breakpoint(max-width 500px) {
     max-width: 280px;
-    marmargin: 0px;gin: 0px auto 0px;
+    margin: 0px auto;
   }
 }
 .input-default{
@@ -157,4 +157,21 @@ section{
 h2.section-title{
   margin: 0px;
   @include font($font,25px,700,$darkGray);
+}
+.swiper-pagination{
+  bottom: 0px!important;
+  &__padding{
+    bottom: 10px!important;
+  }
+}
+.swiper-pagination-bullet{
+  width: 8px!important;
+  height: 8px!important;
+  opacity: 1!important;
+  background-color: transparent!important;
+  border: 2px solid $peach!important;
+  &-active{
+    background-color: $peach!important;
+  }
+
 }

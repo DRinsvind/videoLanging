@@ -6,12 +6,14 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <link rel="stylesheet" href="css/custom.css">
   <link rel="stylesheet" href="css/fonts.css">
+  <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/font-awesome.css">
+  <link rel="stylesheet" href="css/swiper.css">
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=cyrillic" rel="stylesheet">
   <title>Document</title>
 </head>
 <body>
-  <header>
+  <header class="animated fadeInDown">
     <div class="header-block container">
       <div class="header-logo"><nobr>Видеокамера Acme</nobr></div>
       <div class="header-menu">
@@ -37,15 +39,15 @@
     </div>
   </header>
   <main>
-    <section class="head">
+    <section class="head" style="background-image: url(./img/bg_block_4.png)">
       <div class="container container_section-size">
         <div class="head-body">
-          <div class="image-head">
+          <div class="image-head animated fadeInLeft" >
             <div class="image-head__block">
               <img src="./img/ph1.png" alt="">
             </div>
           </div>
-          <div class="head-content">
+          <div class="head-content animated fadeInRight" >
             <h2 class="head-content__title">Видеокамера <nobr>Acme VR04 Compact HD</nobr></h2>
             <div class="head-content__price-block">
               <span class="head-content__new-price">999 грн</span>
@@ -70,9 +72,9 @@
     </section>
     <section class="advantage">
       <div class="container container_section_size">
-        <h2 class="section-title">Преимущества</h2>
+        <h2 data-wow-delay="0.5s" class="section-title wow fadeIn">Преимущества</h2>
         <ul class="advantage-list">
-          <li class="advantage-list__child-block">
+          <li data-wow-delay="0.5s" class="wow fadeIn advantage-list__child-block">
             <div class="advantage-list__wrapper">
               <div class="advantage-list__block-logo">
                 <img src="./img/a1.svg" alt="">
@@ -82,7 +84,7 @@
                 производителя</p>
             </div>
           </li>
-          <li class="advantage-list__child-block">
+          <li  data-wow-delay="0.7s" class="wow fadeIn advantage-list__child-block">
             <div class="advantage-list__wrapper">
               <div class="advantage-list__block-logo">
                 <img src="./img/a2.svg" alt="">
@@ -92,7 +94,7 @@
                 Украины</p>
             </div>
           </li>
-          <li class="advantage-list__child-block">
+          <li  data-wow-delay="0.9s" class="wow fadeIn advantage-list__child-block">
             <div class="advantage-list__wrapper">
               <div class="advantage-list__block-logo">
                 <img src="./img/a3.svg" alt="">
@@ -101,7 +103,7 @@
                 <br>получении</p>
             </div>
           </li>
-          <li class="advantage-list__child-block">
+          <li data-wow-delay="1.1s" class="wow fadeIn advantage-list__child-block">
             <div class="advantage-list__wrapper">
               <div class="advantage-list__block-logo">
                 <img src="./img/a4.svg" alt="">
@@ -110,7 +112,7 @@
                 <nobr>(от производителя)</nobr></p>
             </div>
           </li>
-          <li class="advantage-list__child-block">
+          <li data-wow-delay="1.3s" class="wow fadeIn advantage-list__child-block">
             <div class="advantage-list__wrapper">
                 <div class="advantage-list__block-logo">
                 <img src="./img/a5.svg" alt="">
@@ -121,12 +123,31 @@
             </div>
           </li>
         </ul>
+        <h2 data-wow-delay="0.5s" class="section-title wow fadeIn">Фотографии Видеокамеры Acme VR04 Compact HD</h2>
+        <div class="photo-slider">
+          <div class="swiper-container">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+              <div class="swiper-slide"><img src="./img/c1.png" alt=""></div>
+              <div class="swiper-slide"><img src="./img/c2.png" alt=""></div>
+              <div class="swiper-slide"><img src="./img/c3.png" alt=""></div>
+              <div class="swiper-slide"><img src="./img/c1.png" alt=""></div>
+              <div class="swiper-slide"><img src="./img/c2.png" alt=""></div>
+              <div class="swiper-slide"><img src="./img/c3.png" alt=""></div>
+            </div>
+
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+
+          </div>
+        </div>
       </div>
 
     </section>
     <section class="about">
       <div class="container container_section_size">
-        <h2 class="section-title">О Видеокамерe Acme VR04 Compact HD</h2>
+        <h2 data-wow-delay="0.5s" class="section-title wow fadeIn">О Видеокамерe Acme VR04 Compact HD</h2>
         <div class="resize-block">
           <div class="resize-block__filter"></div>
 
@@ -144,7 +165,7 @@
             даже на глубине 30 м, а также другие аксессуары.
             Интегрированный 2-дюймовый экран позволит вам с...
           </p>
-          <div class="resize-block__arrow"></div>
+          <div class="resize-block__arrow" id="resizear"></div>
         </div>
         <div class="table-block">
           <ul class="table-block__list">
@@ -187,9 +208,9 @@
     </section>
     <section class="reviews">
       <div class="container container_section_size">
-        <h2 class="section-title">Отзывы покупателей</h2>
+        <h2 data-wow-delay="0.5s" class="section-title wow fadeIn">Отзывы покупателей</h2>
         <div class="reviews-list grid">
-          <div class="reviews-list__child-block grid-item">
+          <div class="reviews-list__child-block grid-item wow flipInX">
             <h4 class="reviews-list__child-title">Татьяна Маринчук</h4>
             <p class="reviews-list__child-text">Покупалась камера месяцев 6 назад. Решила оставить свои
               впечатления от использования. Поскольку я люблю активный отдых,
@@ -201,15 +222,13 @@
               воды))<br>
               В общем мне очень понравилась. Покупкой доволена.</p>
           </div>
-
-          <div class="reviews-list__child-block grid-item">
+          <div class="reviews-list__child-block grid-item small-padding wow flipInX">
             <h4 class="reviews-list__child-title">Артем Цапи</h4>
             <p class="reviews-list__child-text">Очень понравилась, и как видеорегистратор можно использовать, и
               достаточный выбор аксессуаров. удобная в пользовании.
               И цена просто радует.</p>
           </div>
-
-          <div class="reviews-list__child-block grid-item">
+          <div class="reviews-list__child-block grid-item small-padding wow flipInX">
             <h4 class="reviews-list__child-title">Олександр Кусий</h4>
             <p class="reviews-list__child-text">В сочетание цена/качество, лучшего не найдёте, я б сказал даже что
               цена заниженна . Это первая моя экшн камера, ездили с семьей в
@@ -217,7 +236,7 @@
               Безусловно глупо сравнивать с Gopro, но для начинающих самое то,
               иногда использую как регистратор в машине.</p>
           </div>
-          <div class="reviews-list__child-block grid-item">
+          <div class="reviews-list__child-block grid-item wow flipInX">
             <h4 class="reviews-list__child-title">Олеся Лукачко</h4>
             <p class="reviews-list__child-text">Камерой доволен на все 100%. Тот редкий случай когда купил
               какую-то вещь и всё тебя в ней устраивает.
@@ -229,7 +248,7 @@
               Вообщем кто сомневается брать или нет - могу уверенно сказать
               что брать стоит.</p>
           </div>
-          <div class="reviews-list__child-block grid-item">
+          <div class="reviews-list__child-block grid-item small-padding wow flipInX">
             <h4 class="reviews-list__child-title">Паша Максименко</h4>
             <p class="reviews-list__child-text">Вполне камера норм. Но крепления для велосипеда не подходит к
               обычному рулю(когда закручиваеш его то крепление сильно гнется и
@@ -237,16 +256,17 @@
               акб,а именно внутри камеры что говорит о качестве зборки,так как на
               видео этот грохот очень заметен.</p>
           </div>
+          <div class="gutter-sizer"></div>
         </div>
       </div>
 
     </section>
     <section class="contacts">
       <div class="container  container_section_size">
-        <h2 class="section-title">Контакты</h2>
+        <h2 data-wow-delay="0.5s" class="section-title wow fadeIn">Контакты</h2>
         <div class="contacts-list">
           <div class="contacts-list__left-side">
-            <div class="contacts-list__contact-item">
+            <div class="contacts-list__contact-item wow zoomIn">
               <div class="contacts-list__contact-logo">
                 <img src="./img/c1.svg" alt="">
               </div>
@@ -256,7 +276,7 @@
                 многоканальный номер
               </p>
             </div>
-            <div class="contacts-list__contact-item">
+            <div class="contacts-list__contact-item wow zoomIn">
               <div class="contacts-list__contact-logo">
                 <img src="./img/c2.svg" alt="">
               </div>
@@ -264,7 +284,7 @@
                 В остальное время пользуйтесь автоответчиком,
                 электронной почтой camera@worldwideshop.ru</p>
             </div>
-            <div class="contacts-list__contact-item">
+            <div class="contacts-list__contact-item wow zoomIn">
               <div class="contacts-list__contact-logo">
                 <img src="./img/c3.svg" alt="">
               </div>
@@ -272,7 +292,7 @@
                 любой город Украины и СНГ. Отправка заказа осуществляется
                 курьером на на следующий после заказа день.</p>
             </div>
-            <div class="contacts-list__contact-item">
+            <div class="contacts-list__contact-item wow zoomIn">
               <div class="contacts-list__contact-logo">
                 <img src="./img/c4.svg" alt="">
               </div>
@@ -282,7 +302,7 @@
             </div>
           </div>
           <div class="contacts-list__right-side">
-            <div class="contacts-list__contact-item">
+            <div class="contacts-list__contact-item wow zoomIn">
               <div class="contacts-list__contact-logo">
                 <img src="./img/c5.svg" alt="">
               </div>
@@ -293,7 +313,7 @@
             <div class="contacts-list__contact-map" id="map"></div>
           </div>
         </div>
-        <form action="" class="form-default form-default_contacts_section">
+        <form action="" class="form-default form-default_contacts_section wow fadeIn">
           <h2 class="form-title">Закажите экшн видеокамеру <nobr>ACME VR04 COMPACT HD</nobr> за <nobr>999 грн</nobr></h2>
           <div class="form-wrapper">
             <div class="form-group">
@@ -321,9 +341,11 @@
     </div>
   </footer>
 </body>
-<script src='js/jquery-2.2.4.min.js'></script>
-<script src='//cdnjs.cloudflare.com/ajax/libs/masonry/3.1.5/masonry.pkgd.min.js' />
-<script src="js/custom.js"></script>
+<script   src='js/jquery-2.2.4.min.js'></script>
+<script   src='./js/masonry.min.js'></script>
+<script   src="js/swiper.min.js"></script>
+<script   src="js/wow.js"></script>
+<script   src="js/custom.js"></script>
 <script>
     function initMap() {
         var uluru = {lat: 48.46251398, lng: 35.04885435};
@@ -336,10 +358,6 @@
             map: map
         });
     }
-    $('.grid').masonry({
-        itemSelector: '.grid-item',
-        gutter: 20
-    });
 </script>
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAW3g1OD8WgWo8jEaRrfLue5ZSQVC9K00U&callback=initMap">
