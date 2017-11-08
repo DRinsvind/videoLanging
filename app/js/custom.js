@@ -144,6 +144,12 @@ $(document).ready(function() {
         },
         custom:function(){
             new WOW().init();
+            $('#getting-started').countdown('2018/01/01', function(event) {
+                // var format = '%w недель %d дней %H:%M:%S';
+                var format = '%H:%M:%S';
+                $(this).html(event.strftime(format));
+
+            });
         }
     }
     init.click();
