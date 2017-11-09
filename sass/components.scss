@@ -3,9 +3,113 @@ body{
   overflow: hidden;
   overflow-y: auto;
   position: relative;
-  //display: flex;
-  //flex-direction: column;
-  //min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.modal-pop{
+  user-select:none;
+  position: fixed;
+  background-color: rgba(255,255,255,0.9);
+  width:100vw;
+  height:100vh;
+  top:0px;
+  left:0px;
+  opacity: 0;
+  z-index: -50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-property: opacity;
+  transition-duration: 500ms;
+  &.active{
+    opacity: 1;
+    z-index: 500;
+    transition-property: opacity;
+    transition-duration: 500ms;
+    &.success{
+      .modal-pop__body{
+        visibility: visible;
+        opacity: 1;
+        transition-property: opacity;
+        transition-duration: 1200ms;
+      }
+      .modal-pop__form{
+        display: none;
+      }
+    }
+    &.form{
+      .modal-pop__body{
+        display: none;
+      }
+      .modal-pop__form{
+        top:0px;
+        transition-property: top;
+        transition-duration: 700ms;
+      }
+    }
+    
+  }
+  &__wrapper{
+   
+    padding: 30px 45px 0px 20px;
+    transform:translateY(-30px);
+    max-width: 440px;
+    box-sizing: border-box;
+  }
+  &__form{
+    position: relative;
+    top:-100vh;
+    transition-property: top;
+    transition-duration: 700ms;
+  }
+  &__body{
+    visibility: hidden;
+     opacity: 0;
+    transition-property: opacity;
+    transition-duration: 1200ms;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding: 23px;
+    max-width: 100%;
+    background-color: white;
+    box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.3);
+  }
+  &__title{
+    text-align: center;
+    @include font($font,20px,400,$purple);
+    line-height: 30px;
+  }
+  &__text{
+    text-align: center;
+    @include font($font,20px,400,$black);
+    line-height: 30px;
+    margin-bottom: 12px;
+  }
+  &__logo{
+    display: flex;
+    justify-content: center;
+    img{
+      width: 50px;
+      height:50px;
+      display: block;
+      margin: 0px auto;
+    }
+  }
+
+  &__close{
+    position: absolute;
+    width:30px;
+    height:30px;
+    cursor: pointer;
+    right:-25px;
+    top:-25px;
+    img{
+      width: inherit;
+      height: inherit;
+    }
+  }
 }
 *{
   padding: 0px;
@@ -40,7 +144,7 @@ section{
   min-width: 380px;
   background-color: $white;
   width:100%;
-  padding: 40px;
+  padding: 22px 40px 38px;
   box-sizing: border-box;
   box-shadow: 0px 3px 10px 1px rgba(0,0,0,0.3);
   @include breakpoint(780px 900px) {
@@ -53,6 +157,15 @@ section{
     padding: 20px;
   }
   &_contacts_section{
+    max-width: 400px;
+    min-width: 400px;
+    margin: 0px auto 10px;
+    @include breakpoint(max-width 500px) {
+      width:100%;
+      min-width: 100%;
+      max-width: 100%;
+      padding: 20px;
+    }
     @include breakpoint(940px){
       max-width: 970px;
       min-width: 100%;
@@ -174,4 +287,31 @@ h2.section-title{
     background-color: $peach!important;
   }
 
+}
+.countdown{
+  max-width: 230px;
+  margin: 0px auto;
+  &__title{
+    @include font($font,18px,500,$darkGray);
+    margin-bottom: 10px;
+  }
+  &__count{
+    @include font($font,24px,700,$black);
+  }
+  &__count-title{
+    @include font($font,14px,400,$darkGray);
+    text-align: center;
+  }
+  &__body{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+  }
+  &__item{
+    display: flex;
+    flex-direction: column;
+    &:not(:nth-child(1)):not(:last-child){
+      margin: 0px 20px;
+    }
+  }
 }

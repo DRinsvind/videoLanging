@@ -23,11 +23,11 @@
           <span></span>
         </div>
         <ul class="header-menu__list-block" id="headmenu">
-          <li class="li header-menu__list-child active"><a href="#" class="header-menu__list-link">главная</a></li>
-          <li class="li header-menu__list-child"><a href="#" class="header-menu__list-link">преимущества</a></li>
-          <li class="li header-menu__list-child"><a href="#" class="header-menu__list-link">описание</a></li>
-          <li class="li header-menu__list-child"><a href="#" class="header-menu__list-link">отзывы</a></li>
-          <li class="li header-menu__list-child"><a href="#" class="header-menu__list-link">контакты</a></li>
+          <li class="li header-menu__list-child active pos pos1"><a href="#pos1" class="header-menu__list-link">главная</a></li>
+          <li class="li header-menu__list-child pos pos2"><a href="#pos2" class="header-menu__list-link">преимущества</a></li>
+          <li class="li header-menu__list-child pos pos3"><a href="#pos3" class="header-menu__list-link">описание</a></li>
+          <li class="li header-menu__list-child pos pos4"><a href="#pos4" class="header-menu__list-link">отзывы</a></li>
+          <li class="li header-menu__list-child pos pos5"><a href="#pos5" class="header-menu__list-link">контакты</a></li>
         </ul>
       </div>
       <p class="header-contact">
@@ -35,11 +35,12 @@
         +3 8066 022 22 22
         </nobr>
       </p>
-      <div class="header-button">Заказать по телефону</div>
+      <button class="header-button" id="header-button">Заказать по телефону</button>
     </div>
+
   </header>
   <main>
-    <section class="head" style="background-image: url(./img/bg_block_4.png)">
+    <section class="head" style="background-image: url(./img/bg_block_4.png)" id="pos1">
       <div class="container container_section-size">
         <div class="head-body">
           <div class="image-head animated fadeInLeft" >
@@ -53,27 +54,25 @@
               <span class="head-content__new-price">999 грн</span>
               <span class="head-content__old-price">2000 грн</span>
             </div>
-            <form action="" class="form-default">
+            <form action="" class="form-default" data-count='1'>
               <h2 class="form-title">Закажите экшн видеокамеру
                 <nobr>ACME VR04 COMPACT HD</nobr></h2>
               <div class="form-group">
-                <input type="text" class="input-default" id="header-name">
+                <input type="text" class="input-default  input-default__name input-default_name_1" id="header-name" name='name' required>
                 <label for="header-name" class="label-default">Ваше имя <span>*</span></span></label>
               </div>
               <div class="form-group">
-                <input type="text" class="input-default" id="header-phone">
+                <input type="text" class="input-default  input-default__phone input-default_phone_1" id="header-phone" name='phone' required>
                 <label for="header-phone" class="label-default">Ваш телефон <span>*</span></span></label>
               </div>
+              <input type="hidden" name="secret" value=""  class="input-default_secret_1">
+              <input type="hidden" name="subject" value="Тема письма">
               <button class="button-default">Купить</button>
             </form>
             <div class="countdown">
                 <h2 class="countdown__title">До конца акции осталось:</h2>
-              <div id="countdown__body">
-                <div class="countdown__item">
-
-                </div>
-                <div class="countdown__item"></div>
-                <div class="countdown__item"></div>
+              <div id="getting-started" class="countdown__body">
+               
               </div>
             </div>
 
@@ -83,7 +82,7 @@
     </section>
     <section class="advantage">
       <div class="container container_section_size">
-        <h2 data-wow-delay="0.5s" class="section-title wow fadeIn">Преимущества</h2>
+        <h2 data-wow-delay="0.5s" class="section-title wow fadeIn"  id="pos2">Преимущества</h2>
         <ul class="advantage-list">
           <li data-wow-delay="0.5s" class="wow fadeIn advantage-list__child-block">
             <div class="advantage-list__wrapper">
@@ -136,6 +135,7 @@
         </ul>
         <h2 data-wow-delay="0.5s" class="section-title wow fadeIn">Фотографии Видеокамеры Acme VR04 Compact HD</h2>
         <div class="photo-slider">
+        <div class="swiper-button-prev__custom"></div>
           <div class="swiper-container">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
@@ -147,18 +147,17 @@
               <div class="swiper-slide"><img src="./img/c2.png" alt=""></div>
               <div class="swiper-slide"><img src="./img/c3.png" alt=""></div>
             </div>
-
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
-
           </div>
+          <div class="swiper-button-next__custom"></div>
         </div>
       </div>
 
     </section>
     <section class="about">
       <div class="container container_section_size">
-        <h2 data-wow-delay="0.5s" class="section-title wow fadeIn">О Видеокамерe Acme VR04 Compact HD</h2>
+        <h2 data-wow-delay="0.5s" class="section-title wow fadeIn"   id="pos3">О Видеокамерe Acme VR04 Compact HD</h2>
         <div class="resize-block">
           <div class="resize-block__filter"></div>
 
@@ -219,7 +218,7 @@
     </section>
     <section class="reviews">
       <div class="container container_section_size">
-        <h2 data-wow-delay="0.5s" class="section-title wow fadeIn">Отзывы покупателей</h2>
+        <h2 data-wow-delay="0.5s" class="section-title wow fadeIn"   id="pos4">Отзывы покупателей</h2>
         <div class="reviews-list grid">
           <div class="reviews-list__child-block grid-item wow flipInX">
             <h4 class="reviews-list__child-title">Татьяна Маринчук</h4>
@@ -274,7 +273,7 @@
     </section>
     <section class="contacts">
       <div class="container  container_section_size">
-        <h2 data-wow-delay="0.5s" class="section-title wow fadeIn">Контакты</h2>
+        <h2 data-wow-delay="0.5s" class="section-title wow fadeIn"   id="pos5">Контакты</h2>
         <div class="contacts-list">
           <div class="contacts-list__left-side">
             <div class="contacts-list__contact-item wow zoomIn">
@@ -324,17 +323,19 @@
             <div class="contacts-list__contact-map" id="map"></div>
           </div>
         </div>
-        <form action="" class="form-default form-default_contacts_section wow fadeIn">
+        <form action="" class="form-default form-default_contacts_section wow fadeIn" data-count='2'>
           <h2 class="form-title">Закажите экшн видеокамеру <nobr>ACME VR04 COMPACT HD</nobr> за <nobr>999 грн</nobr></h2>
           <div class="form-wrapper">
             <div class="form-group">
-              <input type="text" class="input-default" id="header-name">
-              <label for="header-name" class="label-default">Ваше имя<span>*</span></span></label>
+              <input type="text" class="input-default input-default__name input-default_name_2" id="footer-name" required>
+              <label for="footer-name" class="label-default">Ваше имя<span>*</span></span></label>
             </div>
             <div class="form-group">
-              <input type="text" class="input-default" id="header-phone">
-              <label for="header-phone" class="label-default">Ваш телефон<span>*</span></span></label>
+              <input type="text" class="input-default input-default__phone input-default_phone_2" id="footer-phone" required>
+              <label for="footer-phone" class="label-default">Ваш телефон<span>*</span></span></label>
             </div>
+            <input type="hidden" name="secret"  class="input-default_secret_2" value="">
+            <input type="hidden" name="subject" value="Тема письма">
             <button class="button-default">Купить</button>
           </div>
         </form>
@@ -351,11 +352,49 @@
       </div>
     </div>
   </footer>
+  <div class="modal-pop">
+    <div class="modal-pop__wrapper">
+      <div class="modal-pop__body">
+        <h2 class="modal-pop__title">
+          Ваша заявка успешно отправлена! 
+        </h2>
+        <p class="modal-pop__text">
+          Наш менеджер свяжется с Вами в ближайшее время
+        </p>
+        <div class="modal-pop__logo">
+          <img src="./img/success.svg" alt="">
+        </div>
+         <div class="modal-pop__close modal-close">
+            <img src="./img/close.svg" alt="">
+         </div>
+      </div>
+      <div class="modal-pop__form">
+      <div class="modal-pop__close modal-close">
+            <img src="./img/close.svg" alt="">
+         </div>
+        <form action="" class="form-default" data-count='3'>
+          <h2 class="form-title">Оставьте Ваш номер телефона, и наш менеджер перезвонит Вам</h2>
+          <div class="form-group">
+            <input type="text" class="input-default  input-default__name input-default_name_3" id="header-name" name='name' required>
+            <label for="header-name" class="label-default">Ваше имя <span>*</span></span></label>
+          </div>
+          <div class="form-group">
+            <input type="text" class="input-default  input-default__phone input-default_phone_3" id="header-phone" name='phone' required>
+            <label for="header-phone" class="label-default">Ваш телефон <span>*</span></span></label>
+          </div>
+          <input type="hidden" name="secret" value=""  class="input-default_secret_3">
+          <input type="hidden" name="subject" value="Тема письма">
+          <button class="button-default">Купить</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </body>
 <script   src='js/jquery-2.2.4.min.js'></script>
 <script   src='./js/masonry.min.js'></script>
 <script   src="js/swiper.min.js"></script>
 <script   src="js/wow.js"></script>
+<script   src="js/jquery.mask.min.js"></script>
 <script   src="js/jquery.countdown.min.js"></script>
 <script   src="js/custom.js"></script>
 <script>

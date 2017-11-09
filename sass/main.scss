@@ -6,15 +6,12 @@
 }
 .head-body{
   display: flex;
-  padding: 100px 0px 50px;
+  padding: 150px 0px 50px;
   @include breakpoint(max-width 900px) {
-    padding: 65px 0px 50px;
+    padding: 150px 0px 50px;
     @include breakpoint(max-width 780px) {
-      padding: 100px 0px 50px;
+      padding: 150px 0px 50px;
       flex-direction: column;
-      @include breakpoint(max-width 600px) {
-        padding: 100px 0px 15px;
-      }
     }
   }
   &>div{
@@ -402,6 +399,8 @@
     max-height: 50px;
     img{
       max-height: inherit;
+      margin:0px auto;
+      display: block;
     }
     margin-bottom: 18px;
   }
@@ -413,12 +412,15 @@
 
 }
 .photo-slider{
-  padding: 40px 30px 0px;
-
+  padding: 40px 0px 0px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .swiper-container{
     max-width: 750px;
-    margin: 0px auto;
     width:100%;
+    margin:0px 5px!important;
     box-sizing: border-box;
   }
   .swiper-slide{
@@ -426,7 +428,33 @@
     justify-content: center;
     align-items: center;
   }
-  .swiper-button-next,.swiper-button-prev{
+  .swiper-button-prev,.swiper-button-next{
     display: none;
+  }
+  .swiper-button-prev__custom{
+    background-image: url(../img/Arrow_l.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:33px;
+    min-width: 33px;
+    max-width: 33px;
+    height:20px;
+    position: relative;
+    top: 50%;
+    left:0px;
+  }
+  .swiper-button-next__custom{
+    background-image: url(../img/Arrow_r.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width:33px;
+    min-width: 33px;
+    max-width: 33px;
+    height:20px;
+     position: relative;
+    top: 50%;
+    right:0px;
   }
 }
